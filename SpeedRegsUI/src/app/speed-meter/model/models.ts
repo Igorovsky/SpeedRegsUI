@@ -15,3 +15,8 @@ export interface GeneralTrafficStatsResponse {
   "totalRegistrations": number,
   "totalRegistrationsBeforeNine": number
 }
+
+export interface TrafficStatsResponse {
+  totalRegistrations: number,
+  intensity: number
+}

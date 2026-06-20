@@ -3,8 +3,18 @@
   <div>
     <h2>Speed Meter</h2>
   </div>
+  <div class="bb">
+    <button matButton="elevated" class="get-data-btn" (click)="getAllRegistrationsSummaryAt()" >Get SUMMARY</button>
+    <h3>Registration Summary at</h3>
+    <input [(ngModel)]="summaryHours" type="number" placeholder="Hours">
+    <input [(ngModel)]="summaryMinutes" type="number" placeholder="Minutes">
+    <p>Total registrations: {{totalRegistrations}} </p>
+    <p>Intensity: {{intensity}}</p>
+    <br/>
+  </div>
+
   <div>
-    <button matButton="elevated" class="get-stats-btn" (click)="getAllRegistrationsStats()" >Get STATS</button>
+    <button matButton="elevated" class="get-data-btn" (click)="getAllRegistrationsStats()" >Get STATS</button>
     <br/>
     <div class="fl">
       <h3>Highest Speeding Vehicle</h3>
