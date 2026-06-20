@@ -4,3 +4,14 @@ export interface RegistrationsList {
   "timeIn": any,
   "timeOut": any
 }
+
+export interface GeneralTrafficStatsResponse {
+  "highestSpeedVehicle": {
+    "plate": string,
+    "avgSpeed": number,
+    "overtaken": number
+  },
+  "percentSpeedingVehicles": number,
+  "totalRegistrations": number,
+  "totalRegistrationsBeforeNine": number
+}

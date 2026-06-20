@@ -1,30 +1,51 @@
-<span>
-  @if (regsFetched === true) {
+<div class="speed-meter-home-wrapper">
 
-    <h2>Speed Registrations</h2>
-    <table mat-table [dataSource]=registrationsListLocal class="mat-elevation-z8">
+  <div>
+    <h2>Speed Meter</h2>
+  </div>
+  <div>
+    <button matButton="elevated" class="get-stats-btn" (click)="getAllRegistrationsStats()" >Get STATS</button>
+    <br/>
+    <div class="fl">
+      <h3>Highest Speeding Vehicle</h3>
+      <p>Plate: {{registrationsStats.highestSpeedVehicle.plate}}</p>
+      <p>Average Speed: {{registrationsStats.highestSpeedVehicle.avgSpeed}}</p>
+      <p>Num. Veh. Overtaken: {{registrationsStats.highestSpeedVehicle.overtaken}}</p>
+    </div>
+
+    <div class="fr">
+      <h3>Overall Vehicles Data</h3>
+      <p>Percent Speeding Vehicles: {{registrationsStats.percentSpeedingVehicles}}</p>
+      <p>Total Registrations: {{registrationsStats.totalRegistrations}}</p>
+      <p>Total Registrations Before Nine: {{registrationsStats.totalRegistrationsBeforeNine}}</p>
+    </div>
+  </div>
+  <br/>
+
+  @if (regsFetched === true) {
+    <table mat-table [dataSource]=registrationsListLocal class="mat-elevation-z8 bt1 pt20" >
 
       <!-- id Column -->
       <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> id </th>
+        <th mat-header-cell *matHeaderCellDef> Registration ID </th>
         <td mat-cell *matCellDef="let element"> {{element.id}} </td>
       </ng-container>
 
           <!-- plateNumber Column -->
       <ng-container matColumnDef="plateNumber">
-        <th mat-header-cell *matHeaderCellDef> plateNumber </th>
+        <th mat-header-cell *matHeaderCellDef> Plate Number </th>
         <td mat-cell *matCellDef="let element"> {{element.plateNumber}} </td>
       </ng-container>
 
           <!-- timeIn Column -->
       <ng-container matColumnDef="timeIn">
-        <th mat-header-cell *matHeaderCellDef> timeIn </th>
+        <th mat-header-cell *matHeaderCellDef> Time In </th>
         <td mat-cell *matCellDef="let element"> {{element.timeIn}} </td>
       </ng-container>
 
           <!-- timeOut Column -->
       <ng-container matColumnDef="timeOut">
-        <th mat-header-cell *matHeaderCellDef> timeOut </th>
+        <th mat-header-cell *matHeaderCellDef> Time Out </th>
         <td mat-cell *matCellDef="let element"> {{element.timeOut}} </td>
       </ng-container>
 
@@ -33,5 +54,5 @@
     </table>
   }
 
+  </div>
 
-  </span>

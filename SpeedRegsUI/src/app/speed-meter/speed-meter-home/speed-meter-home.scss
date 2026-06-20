@@ -1,8 +1,31 @@
 @use '@angular/material' as mat;
 
-   :root {
-     @include mat.table-overrides((
-     background-color: orange,
-     header-headline-color: red,
-     ));
-   }
+:root {
+ @include mat.table-overrides((
+ background-color: orange,
+ header-headline-color: red,
+ ));
+}
+
+.bt1 {
+  border-top: 1px solid black;
+}
+.pt20 {
+  padding-top: 20px;
+}
+.speed-meter-home-wrapper {
+  padding-left: 64px;
+}
+
+.get-stats-btn {
+  float: right;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
