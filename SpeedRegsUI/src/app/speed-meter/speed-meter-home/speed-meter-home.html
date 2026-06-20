@@ -1,1 +1,37 @@
-<p>speed-meter-home works!</p>
+<span>
+  @if (regsFetched === true) {
+
+    <h2>Speed Registrations</h2>
+    <table mat-table [dataSource]=registrationsListLocal class="mat-elevation-z8">
+
+      <!-- id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+          <!-- plateNumber Column -->
+      <ng-container matColumnDef="plateNumber">
+        <th mat-header-cell *matHeaderCellDef> plateNumber </th>
+        <td mat-cell *matCellDef="let element"> {{element.plateNumber}} </td>
+      </ng-container>
+
+          <!-- timeIn Column -->
+      <ng-container matColumnDef="timeIn">
+        <th mat-header-cell *matHeaderCellDef> timeIn </th>
+        <td mat-cell *matCellDef="let element"> {{element.timeIn}} </td>
+      </ng-container>
+
+          <!-- timeOut Column -->
+      <ng-container matColumnDef="timeOut">
+        <th mat-header-cell *matHeaderCellDef> timeOut </th>
+        <td mat-cell *matCellDef="let element"> {{element.timeOut}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  }
+
+
+  </span>
